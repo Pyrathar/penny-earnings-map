@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Penny earnings map</title>
+<meta name="description" content="US stocks trading under one dollar, their latest two filed quarters, grouped by industry.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <span class="mark">$</span>
+  <span class="brand">Penny earnings map</span>
+  <span class="muted" id="status">loading…</span>
+  <span class="grow"></span>
+  <span class="muted" id="updated"></span>
+</header>
+<main>
+  <div class="tiles" id="tiles"></div>
+
+  <div class="bar">
+    <input id="q" type="search" placeholder="search symbol or company" size="28">
+    <select id="dir">
+      <option value="">all directions</option>
+      <option value="up">revenue grew</option>
+      <option value="down">revenue fell</option>
+      <option value="none">no quarter data</option>
+    </select>
+    <select id="sort">
+      <option value="growth">sort: revenue growth</option>
+      <option value="price">sort: price</option>
+      <option value="symbol">sort: symbol</option>
+      <option value="name">sort: company</option>
+    </select>
+    <label class="muted"><input type="checkbox" id="onlydata" checked> only rows with filings</label>
+  </div>
+
+  <div id="groups"></div>
+  <div class="empty" id="empty" style="display:none">nothing matches those filters</div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
